@@ -1,0 +1,9 @@
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\bin\Debug\WideWorldImporters.dacpac
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\bin\Debug\wwi_ssdt.dll
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\bin\Debug\wwi_ssdt.pdb
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\Model.xml
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\refactor.xml
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\postdeploy.sql
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\predeploy.sql
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\wwi_ssdt.dll
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt\wwi-ssdt\obj\Debug\wwi_ssdt.pdb

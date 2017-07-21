@@ -699,7 +699,7 @@
     <PostDeploy Include="PostDeploymentScripts\Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WideWorldImporters.xml" />
+    <None Include="WideWorldImporters.Publish.xml" />
     <None Include="PostDeploymentScripts\pds100-ins-app-people.sql" />
     <None Include="PostDeploymentScripts\pds110-ins-app-countries.sql" />
     <None Include="PostDeploymentScripts\pds120-ins-app-deliverymethods.sql" />
