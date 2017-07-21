@@ -1,0 +1,5 @@
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt-azure\WideWorldImporters-Azure\obj\Debug\WideWorldImporters_Azure.dll
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt-azure\WideWorldImporters-Azure\obj\Debug\WideWorldImporters_Azure.pdb
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt-azure\WideWorldImporters-Azure\bin\Debug\WideWorldImporters-Azure.dacpac
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt-azure\WideWorldImporters-Azure\bin\Debug\WideWorldImporters_Azure.dll
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-ssdt-azure\WideWorldImporters-Azure\bin\Debug\WideWorldImporters_Azure.pdb

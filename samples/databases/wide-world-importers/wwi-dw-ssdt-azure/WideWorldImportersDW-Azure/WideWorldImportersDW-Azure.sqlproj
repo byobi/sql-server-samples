@@ -74,6 +74,7 @@
     <Folder Include="Application\Stored Procedures\" />
     <Folder Include="Security\" />
     <Folder Include="Sequences\Sequences\" />
+    <Folder Include="PostDeploymentScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\SampleVersion.sql" />
@@ -146,6 +147,7 @@
     <Build Include="Sequences\Sequences\CityKey.sql" />
     <Build Include="Sequences\Sequences\CustomerKey.sql" />
     <Build Include="Sequences\Sequences\EmployeeKey.sql" />
+    <PostDeploy Include="PostDeploymentScripts\Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WideWorldImportersDW-Azure.publish.xml" />
