@@ -1,0 +1,2150 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1400,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/ ;WideWorldImportersDW",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": ".",
+            "database": "WideWorldImportersDW"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "City",
+        "columns": [
+          {
+            "name": "City Key",
+            "dataType": "int64",
+            "sourceColumn": "City Key"
+          },
+          {
+            "name": "WWI City ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI City ID"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "State Province",
+            "dataType": "string",
+            "sourceColumn": "State Province"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "Continent",
+            "dataType": "string",
+            "sourceColumn": "Continent"
+          },
+          {
+            "name": "Sales Territory",
+            "dataType": "string",
+            "sourceColumn": "Sales Territory"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region"
+          },
+          {
+            "name": "Subregion",
+            "dataType": "string",
+            "sourceColumn": "Subregion"
+          },
+          {
+            "name": "Location",
+            "dataType": "string",
+            "sourceColumn": "Location"
+          },
+          {
+            "name": "Latest Recorded Population",
+            "dataType": "int64",
+            "sourceColumn": "Latest Recorded Population"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Dimension_City = Source{[Schema=\"Dimension\",Item=\"City\"]}[Data]",
+                "in",
+                "    Dimension_City"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "Customer Key",
+            "dataType": "int64",
+            "sourceColumn": "Customer Key"
+          },
+          {
+            "name": "WWI Customer ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Customer ID"
+          },
+          {
+            "name": "Customer",
+            "dataType": "string",
+            "sourceColumn": "Customer"
+          },
+          {
+            "name": "Bill To Customer",
+            "dataType": "string",
+            "sourceColumn": "Bill To Customer"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category"
+          },
+          {
+            "name": "Buying Group",
+            "dataType": "string",
+            "sourceColumn": "Buying Group"
+          },
+          {
+            "name": "Primary Contact",
+            "dataType": "string",
+            "sourceColumn": "Primary Contact"
+          },
+          {
+            "name": "Postal Code",
+            "dataType": "string",
+            "sourceColumn": "Postal Code"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Dimension_Customer = Source{[Schema=\"Dimension\",Item=\"Customer\"]}[Data]",
+                "in",
+                "    Dimension_Customer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey"
+          },
+          {
+            "name": "Day Number",
+            "dataType": "int64",
+            "sourceColumn": "Day Number"
+          },
+          {
+            "name": "Day",
+            "dataType": "string",
+            "sourceColumn": "Day"
+          },
+          {
+            "name": "Day of Year",
+            "dataType": "string",
+            "sourceColumn": "Day of Year"
+          },
+          {
+            "name": "Day of Year Number",
+            "dataType": "int64",
+            "sourceColumn": "Day of Year Number"
+          },
+          {
+            "name": "Day of Week",
+            "dataType": "string",
+            "sourceColumn": "Day of Week"
+          },
+          {
+            "name": "Day of Week Number",
+            "dataType": "int64",
+            "sourceColumn": "Day of Week Number"
+          },
+          {
+            "name": "Week of Year",
+            "dataType": "string",
+            "sourceColumn": "Week of Year"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "Short Month",
+            "dataType": "string",
+            "sourceColumn": "Short Month"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "Half of Year",
+            "dataType": "string",
+            "sourceColumn": "Half of Year"
+          },
+          {
+            "name": "Beginning of Month",
+            "dataType": "dateTime",
+            "sourceColumn": "Beginning of Month"
+          },
+          {
+            "name": "Beginning of Quarter",
+            "dataType": "dateTime",
+            "sourceColumn": "Beginning of Quarter"
+          },
+          {
+            "name": "Beginning of Half Year",
+            "dataType": "dateTime",
+            "sourceColumn": "Beginning of Half Year"
+          },
+          {
+            "name": "Beginning of Year",
+            "dataType": "dateTime",
+            "sourceColumn": "Beginning of Year"
+          },
+          {
+            "name": "Beginning of Month Label",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Month Label"
+          },
+          {
+            "name": "Beginning of Month Label Short",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Month Label Short"
+          },
+          {
+            "name": "Beginning of Quarter Label",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Quarter Label"
+          },
+          {
+            "name": "Beginning of Quarter Label Short",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Quarter Label Short"
+          },
+          {
+            "name": "Beginning of Half Year Label",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Half Year Label"
+          },
+          {
+            "name": "Beginning of Half Year Label Short",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Half Year Label Short"
+          },
+          {
+            "name": "Beginning of Year Label",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Year Label"
+          },
+          {
+            "name": "Beginning of Year Label Short",
+            "dataType": "string",
+            "sourceColumn": "Beginning of Year Label Short"
+          },
+          {
+            "name": "Calendar Day Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Day Label"
+          },
+          {
+            "name": "Calendar Day Label Short",
+            "dataType": "string",
+            "sourceColumn": "Calendar Day Label Short"
+          },
+          {
+            "name": "Calendar Week Number",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Week Number"
+          },
+          {
+            "name": "Calendar Week Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Week Label"
+          },
+          {
+            "name": "Calendar Month Number",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Month Number"
+          },
+          {
+            "name": "Calendar Month Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Month Label"
+          },
+          {
+            "name": "Calendar Month Year Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Month Year Label"
+          },
+          {
+            "name": "Calendar Quarter Number",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Quarter Number"
+          },
+          {
+            "name": "Calendar Quarter Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Quarter Label"
+          },
+          {
+            "name": "Calendar Quarter Year Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Quarter Year Label"
+          },
+          {
+            "name": "Calendar Half of Year Number",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Half of Year Number"
+          },
+          {
+            "name": "Calendar Half of Year Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Half of Year Label"
+          },
+          {
+            "name": "Calendar Year Half of Year Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Year Half of Year Label"
+          },
+          {
+            "name": "Calendar Year",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Year"
+          },
+          {
+            "name": "Calendar Year Label",
+            "dataType": "string",
+            "sourceColumn": "Calendar Year Label"
+          },
+          {
+            "name": "Fiscal Month Number",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Month Number"
+          },
+          {
+            "name": "Fiscal Month Label",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Month Label"
+          },
+          {
+            "name": "Fiscal Quarter Number",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Quarter Number"
+          },
+          {
+            "name": "Fiscal Quarter Label",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Quarter Label"
+          },
+          {
+            "name": "Fiscal Half of Year Number",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Half of Year Number"
+          },
+          {
+            "name": "Fiscal Half of Year Label",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Half of Year Label"
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Year"
+          },
+          {
+            "name": "Fiscal Year Label",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year Label"
+          },
+          {
+            "name": "Date Key",
+            "dataType": "int64",
+            "sourceColumn": "Date Key"
+          },
+          {
+            "name": "Year Week Key",
+            "dataType": "int64",
+            "sourceColumn": "Year Week Key"
+          },
+          {
+            "name": "Year Month Key",
+            "dataType": "int64",
+            "sourceColumn": "Year Month Key"
+          },
+          {
+            "name": "Year Quarter Key",
+            "dataType": "int64",
+            "sourceColumn": "Year Quarter Key"
+          },
+          {
+            "name": "Year Half of Year Key",
+            "dataType": "int64",
+            "sourceColumn": "Year Half of Year Key"
+          },
+          {
+            "name": "Year Key",
+            "dataType": "int64",
+            "sourceColumn": "Year Key"
+          },
+          {
+            "name": "Beginning of Month Key",
+            "dataType": "int64",
+            "sourceColumn": "Beginning of Month Key"
+          },
+          {
+            "name": "Beginning of Quarter Key",
+            "dataType": "int64",
+            "sourceColumn": "Beginning of Quarter Key"
+          },
+          {
+            "name": "Beginning of Half Year Key",
+            "dataType": "int64",
+            "sourceColumn": "Beginning of Half Year Key"
+          },
+          {
+            "name": "Beginning of Year Key",
+            "dataType": "int64",
+            "sourceColumn": "Beginning of Year Key"
+          },
+          {
+            "name": "Fiscal Year Month Key",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Year Month Key"
+          },
+          {
+            "name": "Fiscal Year Quarter Key",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Year Quarter Key"
+          },
+          {
+            "name": "Fiscal Year Half of Year Key",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal Year Half of Year Key"
+          },
+          {
+            "name": "ISO Week Number",
+            "dataType": "int64",
+            "sourceColumn": "ISO Week Number"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Dimension_Date = Source{[Schema=\"Dimension\",Item=\"Date\"]}[Data]",
+                "in",
+                "    Dimension_Date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Stock Item",
+        "columns": [
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "WWI Stock Item ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Stock Item ID"
+          },
+          {
+            "name": "Stock Item",
+            "dataType": "string",
+            "sourceColumn": "Stock Item"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color"
+          },
+          {
+            "name": "Selling Package",
+            "dataType": "string",
+            "sourceColumn": "Selling Package"
+          },
+          {
+            "name": "Buying Package",
+            "dataType": "string",
+            "sourceColumn": "Buying Package"
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size"
+          },
+          {
+            "name": "Lead Time Days",
+            "dataType": "int64",
+            "sourceColumn": "Lead Time Days"
+          },
+          {
+            "name": "Quantity Per Outer",
+            "dataType": "int64",
+            "sourceColumn": "Quantity Per Outer"
+          },
+          {
+            "name": "Is Chiller Stock",
+            "dataType": "boolean",
+            "sourceColumn": "Is Chiller Stock"
+          },
+          {
+            "name": "Barcode",
+            "dataType": "string",
+            "sourceColumn": "Barcode"
+          },
+          {
+            "name": "Tax Rate",
+            "dataType": "double",
+            "sourceColumn": "Tax Rate"
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "double",
+            "sourceColumn": "Unit Price"
+          },
+          {
+            "name": "Recommended Retail Price",
+            "dataType": "double",
+            "sourceColumn": "Recommended Retail Price"
+          },
+          {
+            "name": "Typical Weight Per Unit",
+            "dataType": "double",
+            "sourceColumn": "Typical Weight Per Unit"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    #\"Dimension_Stock Item\" = Source{[Schema=\"Dimension\",Item=\"Stock Item\"]}[Data]",
+                "in",
+                "    #\"Dimension_Stock Item\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Employee",
+        "columns": [
+          {
+            "name": "Employee Key",
+            "dataType": "int64",
+            "sourceColumn": "Employee Key"
+          },
+          {
+            "name": "WWI Employee ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Employee ID"
+          },
+          {
+            "name": "Employee",
+            "dataType": "string",
+            "sourceColumn": "Employee"
+          },
+          {
+            "name": "Preferred Name",
+            "dataType": "string",
+            "sourceColumn": "Preferred Name"
+          },
+          {
+            "name": "Is Salesperson",
+            "dataType": "boolean",
+            "sourceColumn": "Is Salesperson"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Dimension_Employee = Source{[Schema=\"Dimension\",Item=\"Employee\"]}[Data]",
+                "in",
+                "    Dimension_Employee"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Payment Method",
+        "columns": [
+          {
+            "name": "Payment Method Key",
+            "dataType": "int64",
+            "sourceColumn": "Payment Method Key"
+          },
+          {
+            "name": "WWI Payment Method ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Payment Method ID"
+          },
+          {
+            "name": "Payment Method",
+            "dataType": "string",
+            "sourceColumn": "Payment Method"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    #\"Dimension_Payment Method\" = Source{[Schema=\"Dimension\",Item=\"Payment Method\"]}[Data]",
+                "in",
+                "    #\"Dimension_Payment Method\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Supplier",
+        "columns": [
+          {
+            "name": "Supplier Key",
+            "dataType": "int64",
+            "sourceColumn": "Supplier Key"
+          },
+          {
+            "name": "WWI Supplier ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Supplier ID"
+          },
+          {
+            "name": "Supplier",
+            "dataType": "string",
+            "sourceColumn": "Supplier"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category"
+          },
+          {
+            "name": "Primary Contact",
+            "dataType": "string",
+            "sourceColumn": "Primary Contact"
+          },
+          {
+            "name": "Supplier Reference",
+            "dataType": "string",
+            "sourceColumn": "Supplier Reference"
+          },
+          {
+            "name": "Payment Days",
+            "dataType": "int64",
+            "sourceColumn": "Payment Days"
+          },
+          {
+            "name": "Postal Code",
+            "dataType": "string",
+            "sourceColumn": "Postal Code"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Dimension_Supplier = Source{[Schema=\"Dimension\",Item=\"Supplier\"]}[Data]",
+                "in",
+                "    Dimension_Supplier"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Transaction Type",
+        "columns": [
+          {
+            "name": "Transaction Type Key",
+            "dataType": "int64",
+            "sourceColumn": "Transaction Type Key"
+          },
+          {
+            "name": "WWI Transaction Type ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Transaction Type ID"
+          },
+          {
+            "name": "Transaction Type",
+            "dataType": "string",
+            "sourceColumn": "Transaction Type"
+          },
+          {
+            "name": "Valid From",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid From"
+          },
+          {
+            "name": "Valid To",
+            "dataType": "dateTime",
+            "sourceColumn": "Valid To"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    #\"Dimension_Transaction Type\" = Source{[Schema=\"Dimension\",Item=\"Transaction Type\"]}[Data]",
+                "in",
+                "    #\"Dimension_Transaction Type\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Movement",
+        "columns": [
+          {
+            "name": "Movement Key",
+            "dataType": "int64",
+            "sourceColumn": "Movement Key"
+          },
+          {
+            "name": "Date Key",
+            "dataType": "dateTime",
+            "sourceColumn": "Date Key"
+          },
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "Customer Key",
+            "dataType": "int64",
+            "sourceColumn": "Customer Key"
+          },
+          {
+            "name": "Supplier Key",
+            "dataType": "int64",
+            "sourceColumn": "Supplier Key"
+          },
+          {
+            "name": "Transaction Type Key",
+            "dataType": "int64",
+            "sourceColumn": "Transaction Type Key"
+          },
+          {
+            "name": "WWI Stock Item Transaction ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Stock Item Transaction ID"
+          },
+          {
+            "name": "WWI Invoice ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Invoice ID"
+          },
+          {
+            "name": "WWI Purchase Order ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Purchase Order ID"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Fact_Movement = Source{[Schema=\"Fact\",Item=\"Movement\"]}[Data]",
+                "in",
+                "    Fact_Movement"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Order",
+        "columns": [
+          {
+            "name": "Order Key",
+            "dataType": "int64",
+            "sourceColumn": "Order Key"
+          },
+          {
+            "name": "City Key",
+            "dataType": "int64",
+            "sourceColumn": "City Key"
+          },
+          {
+            "name": "Customer Key",
+            "dataType": "int64",
+            "sourceColumn": "Customer Key"
+          },
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "Order Date Key",
+            "dataType": "dateTime",
+            "sourceColumn": "Order Date Key"
+          },
+          {
+            "name": "Picked Date Key",
+            "dataType": "dateTime",
+            "sourceColumn": "Picked Date Key"
+          },
+          {
+            "name": "Salesperson Key",
+            "dataType": "int64",
+            "sourceColumn": "Salesperson Key"
+          },
+          {
+            "name": "Picker Key",
+            "dataType": "int64",
+            "sourceColumn": "Picker Key"
+          },
+          {
+            "name": "WWI Order ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Order ID"
+          },
+          {
+            "name": "WWI Backorder ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Backorder ID"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description"
+          },
+          {
+            "name": "Package",
+            "dataType": "string",
+            "sourceColumn": "Package"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "double",
+            "sourceColumn": "Unit Price"
+          },
+          {
+            "name": "Tax Rate",
+            "dataType": "double",
+            "sourceColumn": "Tax Rate"
+          },
+          {
+            "name": "Total Excluding Tax",
+            "dataType": "double",
+            "sourceColumn": "Total Excluding Tax"
+          },
+          {
+            "name": "Tax Amount",
+            "dataType": "double",
+            "sourceColumn": "Tax Amount"
+          },
+          {
+            "name": "Total Including Tax",
+            "dataType": "double",
+            "sourceColumn": "Total Including Tax"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Fact_Order = Source{[Schema=\"Fact\",Item=\"Order\"]}[Data]",
+                "in",
+                "    Fact_Order"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Purchase",
+        "columns": [
+          {
+            "name": "Purchase Key",
+            "dataType": "int64",
+            "sourceColumn": "Purchase Key"
+          },
+          {
+            "name": "Date Key",
+            "dataType": "dateTime",
+            "sourceColumn": "Date Key"
+          },
+          {
+            "name": "Supplier Key",
+            "dataType": "int64",
+            "sourceColumn": "Supplier Key"
+          },
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "WWI Purchase Order ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Purchase Order ID"
+          },
+          {
+            "name": "Ordered Outers",
+            "dataType": "int64",
+            "sourceColumn": "Ordered Outers"
+          },
+          {
+            "name": "Ordered Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Ordered Quantity"
+          },
+          {
+            "name": "Received Outers",
+            "dataType": "int64",
+            "sourceColumn": "Received Outers"
+          },
+          {
+            "name": "Package",
+            "dataType": "string",
+            "sourceColumn": "Package"
+          },
+          {
+            "name": "Is Order Finalized",
+            "dataType": "boolean",
+            "sourceColumn": "Is Order Finalized"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Fact_Purchase = Source{[Schema=\"Fact\",Item=\"Purchase\"]}[Data]",
+                "in",
+                "    Fact_Purchase"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sale",
+        "columns": [
+          {
+            "name": "Sale Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Sale Key"
+          },
+          {
+            "name": "City Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "City Key"
+          },
+          {
+            "name": "Customer Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Customer Key"
+          },
+          {
+            "name": "Bill To Customer Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Bill To Customer Key"
+          },
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "Invoice Date Key",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Invoice Date Key"
+          },
+          {
+            "name": "Delivery Date Key",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Delivery Date Key"
+          },
+          {
+            "name": "Salesperson Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Salesperson Key"
+          },
+          {
+            "name": "WWI Invoice ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Invoice ID"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description"
+          },
+          {
+            "name": "Package",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Package"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Unit Price"
+          },
+          {
+            "name": "Tax Rate",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Tax Rate"
+          },
+          {
+            "name": "Total Excluding Tax",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Total Excluding Tax"
+          },
+          {
+            "name": "Tax Amount",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Tax Amount"
+          },
+          {
+            "name": "Profit",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Profit"
+          },
+          {
+            "name": "Total Including Tax",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Total Including Tax"
+          },
+          {
+            "name": "Total Dry Items",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Total Dry Items"
+          },
+          {
+            "name": "Total Chiller Items",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Total Chiller Items"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Fact_Sale = Source{[Schema=\"Fact\",Item=\"Sale\"]}[Data]",
+                "in",
+                "    Fact_Sale"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sales Profit",
+            "expression": "SUM([Profit])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "detailRowsDefinition": {},
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Stock Holding",
+        "columns": [
+          {
+            "name": "Stock Holding Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Holding Key"
+          },
+          {
+            "name": "Stock Item Key",
+            "dataType": "int64",
+            "sourceColumn": "Stock Item Key"
+          },
+          {
+            "name": "Quantity On Hand",
+            "dataType": "int64",
+            "sourceColumn": "Quantity On Hand"
+          },
+          {
+            "name": "Bin Location",
+            "dataType": "string",
+            "sourceColumn": "Bin Location"
+          },
+          {
+            "name": "Last Stocktake Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Last Stocktake Quantity"
+          },
+          {
+            "name": "Last Cost Price",
+            "dataType": "double",
+            "sourceColumn": "Last Cost Price"
+          },
+          {
+            "name": "Reorder Level",
+            "dataType": "int64",
+            "sourceColumn": "Reorder Level"
+          },
+          {
+            "name": "Target Stock Level",
+            "dataType": "int64",
+            "sourceColumn": "Target Stock Level"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    #\"Fact_Stock Holding\" = Source{[Schema=\"Fact\",Item=\"Stock Holding\"]}[Data]",
+                "in",
+                "    #\"Fact_Stock Holding\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Transaction",
+        "columns": [
+          {
+            "name": "Transaction Key",
+            "dataType": "int64",
+            "sourceColumn": "Transaction Key"
+          },
+          {
+            "name": "Date Key",
+            "dataType": "dateTime",
+            "sourceColumn": "Date Key"
+          },
+          {
+            "name": "Customer Key",
+            "dataType": "int64",
+            "sourceColumn": "Customer Key"
+          },
+          {
+            "name": "Bill To Customer Key",
+            "dataType": "int64",
+            "sourceColumn": "Bill To Customer Key"
+          },
+          {
+            "name": "Supplier Key",
+            "dataType": "int64",
+            "sourceColumn": "Supplier Key"
+          },
+          {
+            "name": "Transaction Type Key",
+            "dataType": "int64",
+            "sourceColumn": "Transaction Type Key"
+          },
+          {
+            "name": "Payment Method Key",
+            "dataType": "int64",
+            "sourceColumn": "Payment Method Key"
+          },
+          {
+            "name": "WWI Customer Transaction ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Customer Transaction ID"
+          },
+          {
+            "name": "WWI Supplier Transaction ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Supplier Transaction ID"
+          },
+          {
+            "name": "WWI Invoice ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Invoice ID"
+          },
+          {
+            "name": "WWI Purchase Order ID",
+            "dataType": "int64",
+            "sourceColumn": "WWI Purchase Order ID"
+          },
+          {
+            "name": "Supplier Invoice Number",
+            "dataType": "string",
+            "sourceColumn": "Supplier Invoice Number"
+          },
+          {
+            "name": "Total Excluding Tax",
+            "dataType": "double",
+            "sourceColumn": "Total Excluding Tax"
+          },
+          {
+            "name": "Tax Amount",
+            "dataType": "double",
+            "sourceColumn": "Tax Amount"
+          },
+          {
+            "name": "Total Including Tax",
+            "dataType": "double",
+            "sourceColumn": "Total Including Tax"
+          },
+          {
+            "name": "Outstanding Balance",
+            "dataType": "double",
+            "sourceColumn": "Outstanding Balance"
+          },
+          {
+            "name": "Is Finalized",
+            "dataType": "boolean",
+            "sourceColumn": "Is Finalized"
+          },
+          {
+            "name": "Lineage Key",
+            "dataType": "int64",
+            "sourceColumn": "Lineage Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;WideWorldImportersDW\",",
+                "    Fact_Transaction = Source{[Schema=\"Fact\",Item=\"Transaction\"]}[Data]",
+                "in",
+                "    Fact_Transaction"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "c57ddcbf-bb5a-41ff-8013-58db46e7cc86",
+        "fromTable": "Sale",
+        "fromColumn": "City Key",
+        "toTable": "City",
+        "toColumn": "City Key"
+      },
+      {
+        "name": "462a074b-534c-4e50-a0f6-37f28d19fef0",
+        "fromTable": "Order",
+        "fromColumn": "Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key"
+      },
+      {
+        "name": "8e47723d-f5df-4b85-b90a-1c24646f21c7",
+        "fromTable": "Sale",
+        "fromColumn": "Bill To Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key",
+        "isActive": false
+      },
+      {
+        "name": "2db7c003-5394-4ec4-ac54-20cdf0035226",
+        "fromTable": "Sale",
+        "fromColumn": "Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key"
+      },
+      {
+        "name": "c879a6b4-65ca-4ccc-9e5d-e136380353b5",
+        "fromTable": "Transaction",
+        "fromColumn": "Bill To Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key",
+        "isActive": false
+      },
+      {
+        "name": "9cbb8f1a-915c-44d8-bbf6-3fef92c5119a",
+        "fromTable": "Transaction",
+        "fromColumn": "Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key"
+      },
+      {
+        "name": "e07e0af4-5b65-46e7-b37f-4eaceaf7112c",
+        "fromTable": "Movement",
+        "fromColumn": "Date Key",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "ddefc805-c8a4-43af-9eaf-a352545e0ba3",
+        "fromTable": "Order",
+        "fromColumn": "Order Date Key",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "25636b29-b547-45d6-9d07-32b1900f7422",
+        "fromTable": "Order",
+        "fromColumn": "Picked Date Key",
+        "toTable": "Date",
+        "toColumn": "Date",
+        "isActive": false
+      },
+      {
+        "name": "addf9446-8bad-4009-b25b-510a5b6a1192",
+        "fromTable": "Purchase",
+        "fromColumn": "Date Key",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "85b5d77f-a84d-4849-a323-8d58ff35729b",
+        "fromTable": "Sale",
+        "fromColumn": "Delivery Date Key",
+        "toTable": "Date",
+        "toColumn": "Date",
+        "isActive": false
+      },
+      {
+        "name": "d756e73d-37b8-4f43-8f01-8e7ff36ef9fd",
+        "fromTable": "Sale",
+        "fromColumn": "Invoice Date Key",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "f9ed251b-40b3-4c2b-a407-3e8ad68c25f6",
+        "fromTable": "Transaction",
+        "fromColumn": "Date Key",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "34116d01-8ebb-4e31-85d1-9767169b4a4a",
+        "fromTable": "Movement",
+        "fromColumn": "Stock Item Key",
+        "toTable": "Stock Item",
+        "toColumn": "Stock Item Key"
+      },
+      {
+        "name": "6a8dd6fa-33e3-4f17-b4d2-4832d9f1b257",
+        "fromTable": "Order",
+        "fromColumn": "Stock Item Key",
+        "toTable": "Stock Item",
+        "toColumn": "Stock Item Key"
+      },
+      {
+        "name": "c147aa79-0379-48d8-8c9b-8474e240b15f",
+        "fromTable": "Purchase",
+        "fromColumn": "Stock Item Key",
+        "toTable": "Stock Item",
+        "toColumn": "Stock Item Key"
+      },
+      {
+        "name": "baa726c7-ad67-422b-99fc-90b8274e38c6",
+        "fromTable": "Sale",
+        "fromColumn": "Stock Item Key",
+        "toTable": "Stock Item",
+        "toColumn": "Stock Item Key"
+      },
+      {
+        "name": "eb93542f-e89d-4924-8c7e-63bc2287c9fe",
+        "fromTable": "Order",
+        "fromColumn": "Picker Key",
+        "toTable": "Employee",
+        "toColumn": "Employee Key",
+        "isActive": false
+      },
+      {
+        "name": "d3171ec4-3a58-4b19-a533-3fb1120c7748",
+        "fromTable": "Order",
+        "fromColumn": "Salesperson Key",
+        "toTable": "Employee",
+        "toColumn": "Employee Key"
+      },
+      {
+        "name": "a00c51a4-ee9b-4d29-b38f-d28fc7f21eff",
+        "fromTable": "Movement",
+        "fromColumn": "Supplier Key",
+        "toTable": "Supplier",
+        "toColumn": "Supplier Key"
+      },
+      {
+        "name": "c613b8f5-7d46-4f5f-a731-6e1a3aa01877",
+        "fromTable": "Purchase",
+        "fromColumn": "Supplier Key",
+        "toTable": "Supplier",
+        "toColumn": "Supplier Key"
+      },
+      {
+        "name": "5e48af36-e44f-422a-a374-fe7787dc924e",
+        "fromTable": "Movement",
+        "fromColumn": "Transaction Type Key",
+        "toTable": "Transaction Type",
+        "toColumn": "Transaction Type Key"
+      },
+      {
+        "name": "cc72c997-3f4e-4ee4-ab8f-a6b2dc25743d",
+        "fromTable": "Transaction",
+        "fromColumn": "Transaction Type Key",
+        "toTable": "Transaction Type",
+        "toColumn": "Transaction Type Key"
+      },
+      {
+        "name": "51b6a46a-adee-4071-9084-3b879536b540",
+        "fromTable": "Order",
+        "fromColumn": "City Key",
+        "toTable": "City",
+        "toColumn": "City Key"
+      },
+      {
+        "name": "a1934f22-cd77-401f-8d4b-bc96688917f4",
+        "fromTable": "Movement",
+        "fromColumn": "Customer Key",
+        "toTable": "Customer",
+        "toColumn": "Customer Key"
+      },
+      {
+        "name": "581ed5db-2aac-4312-b41a-c21aeec882c0",
+        "fromTable": "Stock Holding",
+        "fromColumn": "Stock Item Key",
+        "toTable": "Stock Item",
+        "toColumn": "Stock Item Key"
+      },
+      {
+        "name": "79431fee-d062-4fef-ac8a-8d5eb703ecac",
+        "fromTable": "Sale",
+        "fromColumn": "Salesperson Key",
+        "toTable": "Employee",
+        "toColumn": "Employee Key"
+      },
+      {
+        "name": "4239ff0e-146a-4a4a-b709-0ba4ccf7d8e9",
+        "fromTable": "Transaction",
+        "fromColumn": "Payment Method Key",
+        "toTable": "Payment Method",
+        "toColumn": "Payment Method Key"
+      },
+      {
+        "name": "361ed85e-ea03-4af4-97f2-854ba9aa5e1c",
+        "fromTable": "Transaction",
+        "fromColumn": "Supplier Key",
+        "toTable": "Supplier",
+        "toColumn": "Supplier Key"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "Sales",
+        "tables": [
+          {
+            "name": "Sale",
+            "columns": [
+              {
+                "name": "Bill To Customer Key"
+              },
+              {
+                "name": "City Key"
+              },
+              {
+                "name": "Customer Key"
+              },
+              {
+                "name": "Delivery Date Key"
+              },
+              {
+                "name": "Description"
+              },
+              {
+                "name": "Invoice Date Key"
+              },
+              {
+                "name": "Lineage Key"
+              },
+              {
+                "name": "Package"
+              },
+              {
+                "name": "Profit"
+              },
+              {
+                "name": "Quantity"
+              },
+              {
+                "name": "Sale Key"
+              },
+              {
+                "name": "Salesperson Key"
+              },
+              {
+                "name": "Stock Item Key"
+              },
+              {
+                "name": "Tax Amount"
+              },
+              {
+                "name": "Tax Rate"
+              },
+              {
+                "name": "Total Chiller Items"
+              },
+              {
+                "name": "Total Dry Items"
+              },
+              {
+                "name": "Total Excluding Tax"
+              },
+              {
+                "name": "Total Including Tax"
+              },
+              {
+                "name": "Unit Price"
+              },
+              {
+                "name": "WWI Invoice ID"
+              }
+            ],
+            "measures": [
+              {
+                "name": "Sales Profit"
+              }
+            ]
+          },
+          {
+            "name": "City",
+            "columns": [
+              {
+                "name": "City"
+              },
+              {
+                "name": "City Key"
+              },
+              {
+                "name": "Continent"
+              },
+              {
+                "name": "Country"
+              },
+              {
+                "name": "Latest Recorded Population"
+              },
+              {
+                "name": "Lineage Key"
+              },
+              {
+                "name": "Location"
+              },
+              {
+                "name": "Region"
+              },
+              {
+                "name": "Sales Territory"
+              },
+              {
+                "name": "State Province"
+              },
+              {
+                "name": "Subregion"
+              },
+              {
+                "name": "Valid From"
+              },
+              {
+                "name": "Valid To"
+              },
+              {
+                "name": "WWI City ID"
+              }
+            ]
+          },
+          {
+            "name": "Customer",
+            "columns": [
+              {
+                "name": "Bill To Customer"
+              },
+              {
+                "name": "Buying Group"
+              },
+              {
+                "name": "Category"
+              },
+              {
+                "name": "Customer"
+              },
+              {
+                "name": "Customer Key"
+              },
+              {
+                "name": "Lineage Key"
+              },
+              {
+                "name": "Postal Code"
+              },
+              {
+                "name": "Primary Contact"
+              },
+              {
+                "name": "Valid From"
+              },
+              {
+                "name": "Valid To"
+              },
+              {
+                "name": "WWI Customer ID"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "columns": [
+              {
+                "name": "Beginning of Half Year"
+              },
+              {
+                "name": "Beginning of Half Year Key"
+              },
+              {
+                "name": "Beginning of Half Year Label"
+              },
+              {
+                "name": "Beginning of Half Year Label Short"
+              },
+              {
+                "name": "Beginning of Month"
+              },
+              {
+                "name": "Beginning of Month Key"
+              },
+              {
+                "name": "Beginning of Month Label"
+              },
+              {
+                "name": "Beginning of Month Label Short"
+              },
+              {
+                "name": "Beginning of Quarter"
+              },
+              {
+                "name": "Beginning of Quarter Key"
+              },
+              {
+                "name": "Beginning of Quarter Label"
+              },
+              {
+                "name": "Beginning of Quarter Label Short"
+              },
+              {
+                "name": "Beginning of Year"
+              },
+              {
+                "name": "Beginning of Year Key"
+              },
+              {
+                "name": "Beginning of Year Label"
+              },
+              {
+                "name": "Beginning of Year Label Short"
+              },
+              {
+                "name": "Calendar Day Label"
+              },
+              {
+                "name": "Calendar Day Label Short"
+              },
+              {
+                "name": "Calendar Half of Year Label"
+              },
+              {
+                "name": "Calendar Half of Year Number"
+              },
+              {
+                "name": "Calendar Month Label"
+              },
+              {
+                "name": "Calendar Month Number"
+              },
+              {
+                "name": "Calendar Month Year Label"
+              },
+              {
+                "name": "Calendar Quarter Label"
+              },
+              {
+                "name": "Calendar Quarter Number"
+              },
+              {
+                "name": "Calendar Quarter Year Label"
+              },
+              {
+                "name": "Calendar Week Label"
+              },
+              {
+                "name": "Calendar Week Number"
+              },
+              {
+                "name": "Calendar Year"
+              },
+              {
+                "name": "Calendar Year Half of Year Label"
+              },
+              {
+                "name": "Calendar Year Label"
+              },
+              {
+                "name": "Date"
+              },
+              {
+                "name": "Date Key"
+              },
+              {
+                "name": "DateKey"
+              },
+              {
+                "name": "Day"
+              },
+              {
+                "name": "Day Number"
+              },
+              {
+                "name": "Day of Week"
+              },
+              {
+                "name": "Day of Week Number"
+              },
+              {
+                "name": "Day of Year"
+              },
+              {
+                "name": "Day of Year Number"
+              },
+              {
+                "name": "Fiscal Half of Year Label"
+              },
+              {
+                "name": "Fiscal Half of Year Number"
+              },
+              {
+                "name": "Fiscal Month Label"
+              },
+              {
+                "name": "Fiscal Month Number"
+              },
+              {
+                "name": "Fiscal Quarter Label"
+              },
+              {
+                "name": "Fiscal Quarter Number"
+              },
+              {
+                "name": "Fiscal Year"
+              },
+              {
+                "name": "Fiscal Year Half of Year Key"
+              },
+              {
+                "name": "Fiscal Year Label"
+              },
+              {
+                "name": "Fiscal Year Month Key"
+              },
+              {
+                "name": "Fiscal Year Quarter Key"
+              },
+              {
+                "name": "Half of Year"
+              },
+              {
+                "name": "ISO Week Number"
+              },
+              {
+                "name": "Month"
+              },
+              {
+                "name": "Quarter"
+              },
+              {
+                "name": "Short Month"
+              },
+              {
+                "name": "Week of Year"
+              },
+              {
+                "name": "Year Half of Year Key"
+              },
+              {
+                "name": "Year Key"
+              },
+              {
+                "name": "Year Month Key"
+              },
+              {
+                "name": "Year Quarter Key"
+              },
+              {
+                "name": "Year Week Key"
+              }
+            ]
+          },
+          {
+            "name": "Employee",
+            "columns": [
+              {
+                "name": "Employee"
+              },
+              {
+                "name": "Employee Key"
+              },
+              {
+                "name": "Is Salesperson"
+              },
+              {
+                "name": "Lineage Key"
+              },
+              {
+                "name": "Preferred Name"
+              },
+              {
+                "name": "Valid From"
+              },
+              {
+                "name": "Valid To"
+              },
+              {
+                "name": "WWI Employee ID"
+              }
+            ]
+          },
+          {
+            "name": "Stock Item",
+            "columns": [
+              {
+                "name": "Barcode"
+              },
+              {
+                "name": "Brand"
+              },
+              {
+                "name": "Buying Package"
+              },
+              {
+                "name": "Color"
+              },
+              {
+                "name": "Is Chiller Stock"
+              },
+              {
+                "name": "Lead Time Days"
+              },
+              {
+                "name": "Lineage Key"
+              },
+              {
+                "name": "Quantity Per Outer"
+              },
+              {
+                "name": "Recommended Retail Price"
+              },
+              {
+                "name": "Selling Package"
+              },
+              {
+                "name": "Size"
+              },
+              {
+                "name": "Stock Item"
+              },
+              {
+                "name": "Stock Item Key"
+              },
+              {
+                "name": "Tax Rate"
+              },
+              {
+                "name": "Typical Weight Per Unit"
+              },
+              {
+                "name": "Unit Price"
+              },
+              {
+                "name": "Valid From"
+              },
+              {
+                "name": "Valid To"
+              },
+              {
+                "name": "WWI Stock Item ID"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "500"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
