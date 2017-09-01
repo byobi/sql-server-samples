@@ -3,3 +3,7 @@ C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt
 C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\bin\Debug\WideWorldImportersDW_Azure.pdb
 C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\WideWorldImportersDW_Azure.dll
 C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\WideWorldImportersDW_Azure.pdb
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\Model.xml
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\refactor.xml
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\postdeploy.sql
+C:\src\WWI\sql-server-samples\samples\databases\wide-world-importers\wwi-dw-ssdt-azure\WideWorldImportersDW-Azure\obj\Debug\predeploy.sql

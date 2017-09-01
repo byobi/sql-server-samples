@@ -111,6 +111,9 @@ UpgradeLog*.htm
 *.mdf
 *.ldf
 
+# SQL Server DB project files
+*.dbmdl
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout

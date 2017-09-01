@@ -10,13 +10,12 @@
         "connectionDetails": {
           "protocol": "tds",
           "address": {
-            "server": ".",
+            "server": "SQL-DEV-02",
             "database": "WideWorldImportersDW"
           },
           "authentication": null,
           "query": null
         },
-        "options": {},
         "credential": {
           "AuthenticationKind": "ServiceAccount",
           "EncryptConnection": false
@@ -1301,6 +1300,18 @@
                 "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
               }
             ]
+          },
+          {
+            "name": "Sales Amount",
+            "expression": " SUMX('Sale','Sale'[Quantity] * 'Sale'[Unit Price])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "detailRowsDefinition": {},
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
           }
         ]
       },
@@ -1766,6 +1777,9 @@
             "measures": [
               {
                 "name": "Sales Profit"
+              },
+              {
+                "name": "Sales Amount"
               }
             ]
           },

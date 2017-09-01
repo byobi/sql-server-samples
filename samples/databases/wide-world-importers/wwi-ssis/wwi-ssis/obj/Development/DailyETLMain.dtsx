@@ -7,13 +7,13 @@
   DTS:CreatorName="GREG7440WIN10\Greg"
   DTS:DTSID="{1688CC04-248C-44DC-9B43-C8D2DE1DE3FD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LastModifiedProductVersion="14.0.0800.60"
   DTS:LocaleID="3081"
   DTS:ObjectName="DailyETLMain"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{D67A9565-EB23-463B-BE16-0965527159BB}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{266D3248-64F0-4289-81AA-4984402F90B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -10232,9 +10232,9 @@ WITH RESULT SETS
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="291,612"
-          Size="291,655"
+          Size="291,43"
           Id="Package\Load City Dimension"
           TopLeft="204.500000000001,371.3" />
         <NodeLayout
@@ -12231,18 +12231,18 @@ WITH RESULT SETS
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="350.000000000001,1026.3">
+          TopLeft="350.000000000001,414.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-580.066666666667"
+              EndConnector="0,31.9333333333331"
               Start="0,0"
-              End="0,-572.566666666667">
+              End="0,24.4333333333331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-572.566666666667" />
+                    End="0,24.4333333333331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

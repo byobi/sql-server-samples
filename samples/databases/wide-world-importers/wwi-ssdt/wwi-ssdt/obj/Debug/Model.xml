@@ -41,7 +41,10 @@
 			<Property Name="DefaultFullTextLanguage" Value="" />
 			<Property Name="QueryStoreDesiredState" Value="2" />
 			<Property Name="QueryStoreCaptureMode" Value="2" />
-			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Property Name="QueryStoreFlushInterval" Value="3000" />
+			<Property Name="QueryStoreIntervalLength" Value="15" />
+			<Property Name="QueryStoreMaxStorageSize" Value="500" />
+			<Property Name="QueryStoreMaxPlansPerQuery" Value="1000" />
 			<Relationship Name="DefaultFilegroup">
 				<Entry>
 					<References Name="[USERDATA]" />
